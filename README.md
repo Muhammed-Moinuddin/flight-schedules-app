@@ -1,2 +1,2 @@
-# flight-schedules-app
-A React app for searching flight schedules and updates using Rapid API
+# movies-search-app
+A React app for searching movies details using Rapid API
