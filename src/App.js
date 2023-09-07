@@ -1,16 +1,21 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
+import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+
 
 function App() {
 
   const [endPoint, setEndPoint] = useState('');
   const [container, setContainer] = useState([]);
+  const [finalPoint, setFinalPoint] = useState('');
+
 
   useEffect(() => {
     fetchData();
-  }, [endPoint])
+  }, [finalPoint])
 
   const fetchData = async() => {
     const url = `https://online-movie-database.p.rapidapi.com/auto-complete?q=+${endPoint}`;
@@ -33,11 +38,12 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFinalPoint(endPoint);
   }
 
   return (
     <div className="App">
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className='search-bar'>
         <Form.Group className="mb-3">
           <Form.Control type="text" value={endPoint} onChange={e => setEndPoint(e.target.value)} placeholder="Search here.." />
         </Form.Group>
@@ -45,9 +51,21 @@ function App() {
             Submit
           </Button>
       </Form>
-      {container.map((item) => {
+      {container.map((item, index) => {
           return(
-            <p>{item.l}</p>
+            <Container>
+               <Card style={{ width: '18rem' }} key={index}>
+                <Card.Img variant="top" src={item.i.imageUrl} className='cardImage'/>
+                <Card.Body>
+                  <Card.Title>{item.l}</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            </Container>
           )
       })}
     </div>
