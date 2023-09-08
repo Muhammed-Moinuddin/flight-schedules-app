@@ -45,24 +45,24 @@ function App() {
     <div className="App">
       <Form onSubmit={handleSubmit} className='search-bar'>
         <Form.Group className="mb-3">
-          <Form.Control type="text" value={endPoint} onChange={e => setEndPoint(e.target.value)} placeholder="Search here.." />
+          <Form.Control className='input-field' type="text" value={endPoint} onChange={e => setEndPoint(e.target.value)} placeholder="Search here.." />
         </Form.Group>
-        <Button variant="primary" type="submit" >
+        <Button className='submit-button' type="submit" >
             Submit
           </Button>
       </Form>
       {container.map((item, index) => {
           return(
-            <Container>
-               <Card style={{ width: '18rem' }} key={index}>
+            <Container className='container'>
+               <Card style={{ width: '18rem' }} key={index} className="card">
                 <Card.Img variant="top" src={item.i.imageUrl} className='cardImage'/>
                 <Card.Body>
-                  <Card.Title>{item.l}</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                  <Card.Title className="card-title">{item.l}</Card.Title>
+                  <Card.Text className="card-text">
+                    Stars: {item.s}
                   </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
+                  <Card.Footer className="text-muted">Year: {item.y}</Card.Footer>
+                  <Button href="https://www.imdb.com/find/?q=">Learn More</Button>
                 </Card.Body>
               </Card>
             </Container>
