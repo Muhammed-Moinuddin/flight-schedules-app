@@ -45,8 +45,9 @@
 
 .card-title{
     font-weight: 600;
-    padding: 8px 0px;
+    padding: 10px 0px;
     font-size: large;
+    color: gold;
   }
 
 .card-text{
@@ -73,4 +74,15 @@
     font-weight: 700;
     border-radius: 2.5px;
     border: 2px solid gold;
+}
+
+.learn-more-button{
+  padding: 5px 10px;
+  background-color: gold;
+  text-decoration: none;
+  color: black;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 2.5px;
+  border: 2px solid gold;
 }

@@ -62,7 +62,7 @@ function App() {
                     Stars: {item.s}
                   </Card.Text>
                   <Card.Footer className="text-muted">Year: {item.y}</Card.Footer>
-                  <Button href="https://www.imdb.com/find/?q=">Learn More</Button>
+                  <Button className='learn-more-button' href="https://www.imdb.com/find/?q=">Learn More</Button>
                 </Card.Body>
               </Card>
             </Container>
