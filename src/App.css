@@ -7,6 +7,12 @@
     color: white;
 }
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .search-bar{
     margin: 5%;
     display: flex;
@@ -17,30 +23,29 @@
 
 .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 black;
     transition: 0.3s;
     border-radius: 5px;
     text-align: center;
-    padding: 10px;
-    
+    margin-bottom: 100px;
+    padding-bottom: 50px;
   }
   
   /* On mouse-over, add a deeper shadow */
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
   }
   
   /* Add some padding inside the card container */
 .container {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: calc(33.33% - 10px); /* Adjust the width as needed */
   }
 
 .cardImage{
-    width: 75%;
+    width: 40%;
     border-radius: 5px 5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 15px 5px white;
   }
 
 .card-title{
@@ -57,7 +62,7 @@
 
 .text-muted{
     font-size: smaller;
-    padding-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 .input-field{
@@ -77,12 +82,8 @@
 }
 
 .learn-more-button{
-  padding: 5px 10px;
-  background-color: gold;
   text-decoration: none;
-  color: black;
-  font-size: 10px;
+  color: gold;
+  font-size: 14px;
   font-weight: 700;
-  border-radius: 2.5px;
-  border: 2px solid gold;
 }

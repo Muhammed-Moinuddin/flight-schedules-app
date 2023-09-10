@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 
-
 function App() {
 
   const [endPoint, setEndPoint] = useState('');
@@ -51,10 +50,12 @@ function App() {
             Submit
           </Button>
       </Form>
+      
+      <div className="grid">
       {container.map((item, index) => {
           return(
             <Container className='container'>
-               <Card style={{ width: '18rem' }} key={index} className="card">
+               <Card key={index} className="card">
                 <Card.Img variant="top" src={item.i.imageUrl} className='cardImage'/>
                 <Card.Body>
                   <Card.Title className="card-title">{item.l}</Card.Title>
@@ -62,12 +63,13 @@ function App() {
                     Stars: {item.s}
                   </Card.Text>
                   <Card.Footer className="text-muted">Year: {item.y}</Card.Footer>
-                  <Button className='learn-more-button' href="https://www.imdb.com/find/?q=">Learn More</Button>
+                  <Button className='learn-more-button' href={"https://www.imdb.com/find/?q=" + item.l} target="_blank">Learn More</Button>
                 </Card.Body>
               </Card>
             </Container>
           )
       })}
+      </div>
     </div>
   );
 }
